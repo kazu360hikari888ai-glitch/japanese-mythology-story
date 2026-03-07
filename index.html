@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>神々の黄昏 ～日本神話物語～</title>
+  <meta name="description" content="日本神話を現代小説のストーリーテリングで再構築。神々の愛と嫉妬、英雄の冒険と葛藤、そして人と神の境界が揺らぐ壮大な叙事詩。">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⛩️</text></svg>">
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__particles" id="particles"></div>
+    <div class="hero__content">
+      <p class="hero__subtitle">第一部「天地開闢篇」</p>
+      <h1 class="hero__title">神々の黄昏</h1>
+      <p class="hero__title-sub">～日本神話物語～</p>
+      <p class="hero__tagline">
+        完全な世界を求めたが不完全な子を生み、<br>
+        永遠の命を得られたが花の美しさを選び、<br>
+        覗くなと言われたが覗いてしまう──<br>
+        <br>
+        日本神話は「人間の不完全さ」を否定せず、<br>
+        その儚さの中にこそ美を見出す。
+      </p>
+      <div class="hero__scroll">
+        <span>SCROLL</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIVIDER ===== -->
+  <div class="divider">
+    <div class="divider__line"></div>
+    <div class="divider__diamond"></div>
+    <div class="divider__line"></div>
+  </div>
+
+  <!-- ===== EPISODES ===== -->
+  <section class="episodes" id="episodes">
+    <div class="episodes__header reveal">
+      <p class="episodes__label">CHAPTERS</p>
+      <h2 class="episodes__heading">物語を読む</h2>
+    </div>
+
+    <div class="episodes__grid">
+
+      <!-- Episode 1 -->
+      <a href="episode1.html" class="episode-card episode-card--ep1 reveal" id="card-ep1">
+        <div class="episode-card__visual">
+          <span class="episode-card__number">第 1 話</span>
+        </div>
+        <div class="episode-card__body">
+          <h3 class="episode-card__title">混沌（カオス）の卵</h3>
+          <p class="episode-card__synopsis">何もなかった──嘘だ。すべてが在りすぎたのだ。混沌の底で最初の「意志」が目覚め、造化三神が生まれる。世界で最初の孤独と、最初の出会い。</p>
+          <span class="episode-card__cta">読む</span>
+        </div>
+      </a>
+
+      <!-- Episode 2 -->
+      <a href="episode2.html" class="episode-card episode-card--ep2 reveal" id="card-ep2">
+        <div class="episode-card__visual">
+          <span class="episode-card__number">第 2 話</span>
+        </div>
+        <div class="episode-card__body">
+          <h3 class="episode-card__title">神世七代</h3>
+          <p class="episode-card__synopsis">独り神たちの孤独な誕生。やがて「二つで一つ」の概念が芽生え、最後に現れた一組の男女神──イザナギとイザナミに、途方もない命令が下される。</p>
+          <span class="episode-card__cta">読む</span>
+        </div>
+      </a>
+
+      <!-- Episode 3 -->
+      <a href="episode3.html" class="episode-card episode-card--ep3 reveal" id="card-ep3">
+        <div class="episode-card__visual">
+          <span class="episode-card__number">第 3 話</span>
+        </div>
+        <div class="episode-card__body">
+          <h3 class="episode-card__title">天の浮橋</h3>
+          <p class="episode-card__synopsis">天沼矛で混沌の海をかき回し、世界最初の大地を創る。婚姻の儀──しかしイザナミが先に声をかけたその瞬間、世界に最初の「過ち」が刻まれた。</p>
+          <span class="episode-card__cta">読む</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p class="site-footer__text">神々の黄昏 ～日本神話物語～</p>
+  </footer>
+
+  <script>
+    // --- Particle System ---
+    const particleContainer = document.getElementById('particles');
+    function createParticle() {
+      const p = document.createElement('div');
+      p.className = 'hero__particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDuration = (6 + Math.random() * 6) + 's';
+      p.style.animationDelay = Math.random() * 4 + 's';
+      p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
+      particleContainer.appendChild(p);
+      p.addEventListener('animationiteration', () => {
+        p.style.left = Math.random() * 100 + '%';
+      });
+    }
+    for (let i = 0; i < 30; i++) createParticle();
+
+    // --- Scroll Reveal ---
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>
