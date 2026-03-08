@@ -612,77 +612,27 @@ a:hover {
   font-style: italic;
 }
 
-/* --- Episode End Image --- */
-.episode-end-image {
-  margin: var(--space-3xl) 0 var(--space-xl);
+/* --- Episode Top Image --- */
+.episode-top-image {
+  max-width: var(--content-width);
+  margin: 0 auto var(--space-3xl);
+  padding: 0 var(--space-lg);
   text-align: center;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(201, 168, 76, 0.15);
 }
 
-.episode-end-image img {
+.episode-top-image img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(201, 168, 76, 0.15);
   opacity: 0.9;
   transition: opacity var(--duration) var(--ease-out);
 }
 
-.episode-end-image img:hover {
+.episode-top-image img:hover {
   opacity: 1;
-}
-
-/* --- Episode Navigation --- */
-.episode-nav {
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: var(--space-2xl) var(--space-lg) var(--space-3xl);
-  border-top: 1px solid rgba(201, 168, 76, 0.08);
-}
-
-.episode-nav__next {
-  display: block;
-  text-align: center;
-  padding: var(--space-xl);
-  background: var(--bg-card);
-  border: 1px solid rgba(201, 168, 76, 0.1);
-  border-radius: 4px;
-  transition: all var(--duration) var(--ease-out);
-  text-decoration: none;
-}
-
-.episode-nav__next:hover {
-  border-color: rgba(201, 168, 76, 0.3);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
-}
-
-.episode-nav__label {
-  font-family: var(--font-serif);
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  color: var(--ink-gold-dim);
-  display: block;
-  margin-bottom: var(--space-sm);
-}
-
-.episode-nav__title {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: 0.1em;
-  display: block;
-  margin-bottom: var(--space-sm);
-}
-
-.episode-nav__preview {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  display: block;
 }
 
 /* --- Next Episode Teaser --- */
