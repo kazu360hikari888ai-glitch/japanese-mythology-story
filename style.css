@@ -612,6 +612,28 @@ a:hover {
   font-style: italic;
 }
 
+/* --- Episode End Image --- */
+.episode-end-image {
+  margin: var(--space-3xl) 0 var(--space-xl);
+  text-align: center;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.episode-end-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.9;
+  transition: opacity var(--duration) var(--ease-out);
+}
+
+.episode-end-image img:hover {
+  opacity: 1;
+}
+
 /* --- Episode Navigation --- */
 .episode-nav {
   max-width: var(--content-width);
