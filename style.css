@@ -181,9 +181,10 @@ a:hover {
   font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 900;
   line-height: 1.2;
-  color: var(--text-primary);
+  color: #ffffff;
   letter-spacing: 0.1em;
   margin-bottom: var(--space-sm);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0,0,0,0.8);
   opacity: 0;
   animation: fade-up 1.2s 0.6s var(--ease-out) forwards;
 }
@@ -191,22 +192,24 @@ a:hover {
 .hero__title-sub {
   font-family: var(--font-serif);
   font-size: clamp(1rem, 3vw, 1.8rem);
-  font-weight: 300;
-  color: var(--text-secondary);
+  font-weight: 400;
+  color: #fff4d9;
   letter-spacing: 0.25em;
   margin-bottom: var(--space-xl);
+  text-shadow: 0 0 15px rgba(201, 168, 76, 0.8), 0 2px 5px rgba(0,0,0,0.8);
   opacity: 0;
   animation: fade-up 1.2s 0.9s var(--ease-out) forwards;
 }
 
 .hero__tagline {
   font-family: var(--font-serif);
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
-  font-weight: 400;
-  color: var(--text-dim);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 500;
+  color: #f0ebe1;
   line-height: 2.2;
   max-width: 32rem;
   margin: 0 auto var(--space-2xl);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 10px rgba(255,255,255,0.2);
   opacity: 0;
   animation: fade-up 1.2s 1.2s var(--ease-out) forwards;
 }
@@ -415,11 +418,11 @@ a:hover {
 }
 
 /* Part-themed section backgrounds */
-#part1 .episode-card .episode-card__visual { background: linear-gradient(135deg, #0a0a1a 0%, #1a1520 40%, #2a1a2a 70%, #0f0a1a 100%); }
-#part2 .episode-card .episode-card__visual { background: linear-gradient(135deg, #0a1520 0%, #152030 40%, #1a2540 70%, #0a1020 100%); }
-#part3 .episode-card .episode-card__visual { background: linear-gradient(135deg, #1a150a 0%, #2a200f 40%, #1a1a0a 70%, #0f0f0a 100%); }
-#part4 .episode-card .episode-card__visual { background: linear-gradient(135deg, #150a0a 0%, #201515 40%, #2a1a1a 70%, #100a0a 100%); }
-#part5 .episode-card .episode-card__visual { background: linear-gradient(135deg, #0a150f 0%, #15201a 40%, #1a2520 70%, #0a100a 100%); }
+#part1 .episode-card .episode-card__visual { background: url('images/part1.png') center/cover; }
+#part2 .episode-card .episode-card__visual { background: url('images/part2.png') center/cover; }
+#part3 .episode-card .episode-card__visual { background: url('images/part3.png') center/cover; }
+#part4 .episode-card .episode-card__visual { background: url('images/part4.png') center/cover; }
+#part5 .episode-card .episode-card__visual { background: url('images/part5.png') center/cover; }
 
 /* Part description text */
 .episodes__desc {
