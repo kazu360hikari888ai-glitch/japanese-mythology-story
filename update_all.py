@@ -26,9 +26,11 @@ with open(css_path, 'r', encoding='utf-8') as f:
 css = css.replace('center/cover', 'center 20%/cover')
 
 ep_css = '\n/* Individual Episode Visuals */\n'
-for i in range(1, 11):
-    part = (i-1)//10 + 1
-    ep_css += f'#part{part} .episode-card--ep{i} .episode-card__visual {{ background: url(\'images/ep{i}.png\') center 20%/cover !important; }}\n'
+for i in range(1, 51):
+    ep_img_path = os.path.join(r'c:\Users\user\Desktop\Antigravity作成ファイル\日本神話\website\images', f'ep{i}.png')
+    if os.path.exists(ep_img_path):
+        part = (i-1)//10 + 1
+        ep_css += f'#part{part} .episode-card--ep{i} .episode-card__visual {{ background: url(\'images/ep{i}.png\') center 20%/cover !important; }}\n'
 
 if '/* Individual Episode Visuals */' not in css:
     css += ep_css
