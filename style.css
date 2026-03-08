@@ -120,8 +120,7 @@ a:hover {
   overflow: hidden;
   background-image: url('images/hero_bg.png');
   background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
+  background-position: center center;
 }
 
 .hero::before {
