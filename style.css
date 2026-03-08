@@ -418,11 +418,11 @@ a:hover {
 }
 
 /* Part-themed section backgrounds */
-#part1 .episode-card .episode-card__visual { background: url('images/part1.png') center/cover; }
-#part2 .episode-card .episode-card__visual { background: url('images/part2.png') center/cover; }
-#part3 .episode-card .episode-card__visual { background: url('images/part3.png') center/cover; }
-#part4 .episode-card .episode-card__visual { background: url('images/part4.png') center/cover; }
-#part5 .episode-card .episode-card__visual { background: url('images/part5.png') center/cover; }
+#part1 .episode-card .episode-card__visual { background: url('images/part1.png') center 20%/cover; }
+#part2 .episode-card .episode-card__visual { background: url('images/part2.png') center 20%/cover; }
+#part3 .episode-card .episode-card__visual { background: url('images/part3.png') center 20%/cover; }
+#part4 .episode-card .episode-card__visual { background: url('images/part4.png') center 20%/cover; }
+#part5 .episode-card .episode-card__visual { background: url('images/part5.png') center 20%/cover; }
 
 /* Part description text */
 .episodes__desc {
@@ -720,3 +720,15 @@ a:hover {
     height: 150px;
   }
 }
+
+/* Individual Episode Visuals */
+#part1 .episode-card--ep1 .episode-card__visual { background: url('images/ep1.png') center 20%/cover !important; }
+#part1 .episode-card--ep2 .episode-card__visual { background: url('images/ep2.png') center 20%/cover !important; }
+#part1 .episode-card--ep3 .episode-card__visual { background: url('images/ep3.png') center 20%/cover !important; }
+#part1 .episode-card--ep4 .episode-card__visual { background: url('images/ep4.png') center 20%/cover !important; }
+#part1 .episode-card--ep5 .episode-card__visual { background: url('images/ep5.png') center 20%/cover !important; }
+#part1 .episode-card--ep6 .episode-card__visual { background: url('images/ep6.png') center 20%/cover !important; }
+#part1 .episode-card--ep7 .episode-card__visual { background: url('images/ep7.png') center 20%/cover !important; }
+#part1 .episode-card--ep8 .episode-card__visual { background: url('images/ep8.png') center 20%/cover !important; }
+#part1 .episode-card--ep9 .episode-card__visual { background: url('images/ep9.png') center 20%/cover !important; }
+#part1 .episode-card--ep10 .episode-card__visual { background: url('images/ep10.png') center 20%/cover !important; }
