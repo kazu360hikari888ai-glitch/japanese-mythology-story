@@ -395,7 +395,7 @@ a:hover {
   transform: translateX(4px);
 }
 
-/* Card visual backgrounds */
+/* Card visual backgrounds - default and per-part themes */
 .episode-card--ep1 .episode-card__visual {
   background: linear-gradient(135deg, #0a0a1a 0%, #1a1520 40%, #2a1a2a 70%, #0f0a1a 100%);
 }
@@ -405,6 +405,43 @@ a:hover {
 .episode-card--ep3 .episode-card__visual {
   background: linear-gradient(135deg, #1a150a 0%, #2a200f 40%, #1a1a0a 70%, #0f0f0a 100%);
 }
+
+/* Default card visual: subtle dark gradient for all unspecified cards */
+.episode-card .episode-card__visual {
+  background: linear-gradient(135deg, #0d0d18 0%, #151220 40%, #1a1525 70%, #0a0a15 100%);
+}
+
+/* Part-themed section backgrounds */
+#part1 .episode-card .episode-card__visual { background: linear-gradient(135deg, #0a0a1a 0%, #1a1520 40%, #2a1a2a 70%, #0f0a1a 100%); }
+#part2 .episode-card .episode-card__visual { background: linear-gradient(135deg, #0a1520 0%, #152030 40%, #1a2540 70%, #0a1020 100%); }
+#part3 .episode-card .episode-card__visual { background: linear-gradient(135deg, #1a150a 0%, #2a200f 40%, #1a1a0a 70%, #0f0f0a 100%); }
+#part4 .episode-card .episode-card__visual { background: linear-gradient(135deg, #150a0a 0%, #201515 40%, #2a1a1a 70%, #100a0a 100%); }
+#part5 .episode-card .episode-card__visual { background: linear-gradient(135deg, #0a150f 0%, #15201a 40%, #1a2520 70%, #0a100a 100%); }
+
+/* Part description text */
+.episodes__desc {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: var(--space-sm);
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+/* Final episode nav styles */
+.episode-nav__final {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Footer copy */
+.site-footer__copy {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  margin-top: var(--space-xs);
+  opacity: 0.5;
+}
+
 
 /* ============================
    READING PAGE
