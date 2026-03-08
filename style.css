@@ -214,6 +214,30 @@ a:hover {
   animation: fade-up 1.2s 1.2s var(--ease-out) forwards;
 }
 
+.resume-btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--bg-dark);
+  background: var(--ink-gold);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all var(--duration) var(--ease-out);
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+  opacity: 0;
+  animation: fade-up 1.2s 1.3s var(--ease-out) forwards;
+}
+
+.resume-btn:hover {
+  background: var(--ink-gold-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.5);
+}
+
 .hero__scroll {
   display: flex;
   flex-direction: column;
@@ -376,6 +400,19 @@ a:hover {
   flex: 1;
 }
 
+.read-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--bg-dark);
+  background: rgba(201, 168, 76, 0.9);
+  padding: 0.2em 0.6em;
+  border-radius: 12px;
+  margin-top: var(--space-sm);
+  align-self: flex-start;
+}
+
 .episode-card__cta {
   margin-top: var(--space-md);
   font-family: var(--font-serif);
@@ -500,6 +537,34 @@ a:hover {
   letter-spacing: 0.1em;
 }
 
+.reading-font-controls {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.font-size-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.font-size-btn:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--text-primary);
+}
+
+.font-size-btn.active {
+  background: rgba(201, 168, 76, 0.2);
+  border-color: var(--ink-gold-dim);
+  color: var(--ink-gold);
+}
+
 .reading-header__progress {
   position: absolute;
   bottom: 0;
@@ -568,6 +633,15 @@ a:hover {
   color: var(--text-body);
   margin-bottom: 0;
   text-indent: 1em;
+  transition: font-size 0.3s var(--ease-out);
+}
+
+.prose.text-small p {
+  font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+}
+
+.prose.text-large p {
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
 }
 
 .prose p + p {
