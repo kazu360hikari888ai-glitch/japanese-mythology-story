@@ -158,4 +158,38 @@
       observer.observe(p);
     });
   }
+
+  // --- Swipe Navigation ---
+  let touchstartX = 0;
+  let touchendX = 0;
+
+  function handleSwipe() {
+    if (!match) return; // Only process on episode pages
+    const currentEpNum = parseInt(match[1], 10);
+    
+    // Swipe Left (next episode)
+    if (touchstartX - touchendX > 75) {
+      if (currentEpNum < 50) {
+        window.location.href = `episode${currentEpNum + 1}.html`;
+      }
+    }
+    // Swipe Right (prev episode)
+    if (touchendX - touchstartX > 75) {
+      if (currentEpNum > 1) {
+        window.location.href = `episode${currentEpNum - 1}.html`;
+      } else {
+        window.location.href = `index.html`; // Go back to index from ep1
+      }
+    }
+  }
+
+  document.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
 })();
