@@ -121,6 +121,7 @@ a:hover {
   background-image: url('images/hero_bg.png');
   background-size: cover;
   background-position: center center;
+  background-attachment: fixed;
 }
 
 .hero::before {
@@ -768,6 +769,10 @@ a:hover {
 @media (max-width: 768px) {
   .episodes__grid {
     grid-template-columns: 1fr;
+  }
+
+  .pc-only {
+    display: none;
   }
 
   .prose p {
