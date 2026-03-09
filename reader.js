@@ -209,4 +209,32 @@
 
   // Swiping accidentally triggers while scrolling on some screens, so it has been removed based on user feedback.
 
+  // --- Glossary Definitions ---
+  const glossary = {
+    "イザナギ": "世界を創った父神。妻を黄泉まで迎えに行ったが逃げ帰った。",
+    "イザナミ": "世界を創った母神。火の神を産んで命を落とし、黄泉の主となった。",
+    "アマテラス": "太陽の女神。高天原を統べるが、弟の乱暴に怯えて岩戸に引きこもる。",
+    "スサノオ": "海原の神・破壊神。泣いて追放され、ヤマタノオロチを退治した英雄。",
+    "ツクヨミ": "月の神。秩序を重んじすぎるあまり、姉アマテラスから絶縁された。",
+    "オオナムチ": "後の大国主（オオクニヌシ）。何度も死んで蘇り、国を造り上げた。",
+    "スセリビメ": "スサノオの娘。大国主の正妻であり、激しい嫉妬心を持つ。",
+    "ニニギ": "アマテラスの孫。永遠の命（岩）ではなく、短い美しさ（花）を選んだ。",
+    "イワレビコ": "神武天皇。日向から大和へ東征し、大和を平定して初代天皇となった。",
+    "クシナダヒメ": "ヤマタノオロチの生贄にされかけたが、スサノオに救われた妻。",
+    "ヤガミヒメ": "因幡の白兎に予言され、オオナムチを最初に選んだ美しい姫。"
+  };
+
+  const proseParas = document.querySelectorAll('.prose p');
+  if (proseParas.length > 0) {
+    proseParas.forEach(p => {
+      let html = p.innerHTML;
+      for (const [name, desc] of Object.entries(glossary)) {
+        // Prevent wrapping inside attributes or existing tags
+        const regex = new RegExp(`(${name})(?![^<]*>)`, 'g');
+        html = html.replace(regex, `<span class="glossary-term" data-tooltip="${desc}">$1</span>`);
+      }
+      p.innerHTML = html;
+    });
+  }
+
 })();

@@ -449,6 +449,81 @@ a:hover {
 }
 
 /* ============================
+   PROLOGUE
+   ============================ */
+.prologue {
+  padding: var(--space-3xl) var(--space-md) var(--space-xl);
+  background: var(--bg-surface);
+  text-align: center;
+}
+.prologue__inner {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: var(--space-2xl);
+  background: var(--bg-card);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+}
+[data-theme="light"] .prologue__inner {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.prologue__title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  letter-spacing: 0.3em;
+  color: var(--ink-gold);
+  margin-bottom: var(--space-xl);
+}
+.prologue__text {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 2.2;
+  color: var(--text-primary);
+  text-align: left;
+  display: inline-block;
+}
+
+/* ============================
+   WORLD MAP
+   ============================ */
+.world-map {
+  padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  text-align: center;
+}
+.world-map__inner {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+}
+.world-map__image-wrapper {
+  margin-top: var(--space-xl);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+[data-theme="light"] .world-map__image-wrapper {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+.world-map__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 10s ease-out;
+}
+.world-map__image-wrapper:hover .world-map__image {
+  transform: scale(1.05);
+}
+.world-map__caption {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  margin-top: var(--space-lg);
+}
+
+/* ============================
    EPISODE CARDS (Top Page)
    ============================ */
 .episodes {
@@ -799,6 +874,75 @@ a:hover {
   font-size: 0.9em;
 }
 
+/* --- Glossary Tooltip --- */
+.glossary-term {
+  border-bottom: 1px dashed var(--ink-gold);
+  color: var(--ink-gold-glow);
+  cursor: help;
+  position: relative;
+  transition: color 0.3s;
+}
+[data-theme="light"] .glossary-term {
+  color: var(--ink-gold-dim);
+}
+.glossary-term:hover {
+  color: var(--ink-gold);
+}
+.glossary-term::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-align: left;
+  white-space: normal;
+  line-height: 1.6;
+  width: max-content;
+  max-width: 250px;
+  border-radius: 4px;
+  border: 1px solid var(--ink-gold-dim);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s var(--ease-out);
+  z-index: 100;
+  pointer-events: none;
+}
+[data-theme="light"] .glossary-term::after {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.glossary-term:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-4px);
+}
+.glossary-term::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(2px);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: var(--ink-gold-dim) transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s var(--ease-out);
+  z-index: 101;
+  pointer-events: none;
+}
+.glossary-term:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(6px);
+}
+
 /* --- Prose Content --- */
 .prose {
   max-width: var(--content-width);
@@ -1008,13 +1152,21 @@ a:hover {
     right: 10px;
     top: 10px;
   }
-
+  
   .episodes__grid {
     grid-template-columns: 1fr;
   }
 
   .pc-only {
     display: none;
+  }
+
+  .glossary-term::after {
+    left: 0;
+    transform: translateX(-30%) translateY(-8px);
+  }
+  .glossary-term:hover::after {
+    transform: translateX(-30%) translateY(-4px);
   }
 
   .prose, .episode-top-image, .next-episode-teaser {
