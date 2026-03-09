@@ -8,6 +8,26 @@
   // --- State Management ---
   const STORAGE_KEY = 'mythology_read_state';
   const FONT_SIZE_KEY = 'mythology_font_size';
+  const THEME_KEY = 'mythology_theme';
+  
+  // Theme initialization
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.querySelectorAll('.theme-toggle__icon').forEach(icon => {
+      icon.textContent = theme === 'light' ? '🌙' : '🌞';
+    });
+    localStorage.setItem(THEME_KEY, theme);
+  }
+  const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+  applyTheme(savedTheme);
+
+  document.addEventListener('click', (e) => {
+    const toggleBtn = e.target.closest('#themeToggle');
+    if (toggleBtn) {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      applyTheme(currentTheme === 'light' ? 'dark' : 'light');
+    }
+  });
   
   function getReadEpisodes() {
     try {
@@ -94,6 +114,36 @@
         resumeBtn.innerHTML = `続きから読む (第${nextEp}話) →`;
         heroContent.insertBefore(resumeBtn, document.querySelector('.hero__scroll'));
       }
+    }
+
+    // --- Intro Animation Control ---
+    const intro = document.getElementById('intro');
+    if (intro) {
+      if (!sessionStorage.getItem('mythology_intro_played')) {
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          intro.classList.add('intro--hidden');
+          document.body.style.overflow = '';
+          sessionStorage.setItem('mythology_intro_played', 'true');
+        }, 4000);
+      } else {
+        intro.style.display = 'none';
+      }
+    }
+
+    // --- Site Header Auto-Hide on Scroll ---
+    const siteHeader = document.getElementById('siteHeader');
+    if (siteHeader) {
+      let lastTopScroll = 0;
+      window.addEventListener('scroll', () => {
+        const st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastTopScroll && st > 100) {
+          siteHeader.style.transform = 'translateY(-100%)';
+        } else {
+          siteHeader.style.transform = 'translateY(0)';
+        }
+        lastTopScroll = st <= 0 ? 0 : st;
+      }, { passive: true });
     }
   }
 

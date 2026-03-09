@@ -13,7 +13,7 @@ def repl(m):
     return match_str
 
 html = re.sub(r'<a href="episode(\d+)\.html" class="episode-card[^"]*"', repl, html)
-html = re.sub(r'style\.css\?v=\d+', 'style.css?v=13', html)
+html = re.sub(r'style\.css\?v=\d+', 'style.css?v=14', html)
 
 with open(html_path, 'w', encoding='utf-8') as f:
     f.write(html)

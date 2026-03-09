@@ -5,10 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>不完全な神々 ～日本神話物語～</title>
   <meta name="description" content="日本神話を現代小説のストーリーテリングで再構築。全50話の壮大な叙事詩。神々の愛と嫉妬、英雄の冒険と葛藤、そして不完全さの中にこそ美を見出す物語。">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⛩️</text></svg>">
 </head>
 <body>
+
+  <!-- ===== INTRO ANIMATION ===== -->
+  <div id="intro" class="intro-overlay">
+    <div class="intro-content">
+      <p class="intro-subtitle">全五部・五十話</p>
+      <h1 class="intro-title">不完全な神々</h1>
+    </div>
+  </div>
+
+  <!-- ===== TOP NAVIGATION ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="site-header__inner">
+      <nav class="site-nav">
+        <a href="#part1" class="site-nav__link">I. 天地開闢</a>
+        <a href="#part2" class="site-nav__link">II. 高天原</a>
+        <a href="#part3" class="site-nav__link">III. 出雲</a>
+        <a href="#part4" class="site-nav__link">IV. 天孫降臨</a>
+        <a href="#part5" class="site-nav__link">V. 神武東征</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切り替え">
+        <span class="theme-toggle__icon">🌞</span>
+      </button>
+    </div>
+  </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
@@ -178,6 +202,7 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => revealObserver.observe(el));
   </script>
+  <script src="reader.js"></script>
 
 </body>
 </html>
