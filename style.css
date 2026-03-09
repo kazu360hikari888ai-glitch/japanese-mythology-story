@@ -1157,7 +1157,7 @@ a:hover {
     padding: var(--space-xl) var(--space-xs);
   }
   .prologue__inner {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-lg) var(--space-lg);
   }
   .prologue__text {
     font-size: 0.9rem;
