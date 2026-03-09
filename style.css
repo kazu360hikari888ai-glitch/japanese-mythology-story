@@ -1160,7 +1160,10 @@ a:hover {
     padding: var(--space-lg) var(--space-lg);
   }
   .prologue__text {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    max-width: 17em; /* およそ 16~17文字程度に制限 */
+    display: block;
+    margin: 0 auto;
   }
 
   .episodes__grid {
