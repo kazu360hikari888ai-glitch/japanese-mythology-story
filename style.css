@@ -139,6 +139,7 @@ a:hover {
   justify-content: center;
   flex-direction: column;
   transition: opacity 2s var(--ease-out), visibility 2s;
+  pointer-events: none;
 }
 [data-theme="light"] .intro-overlay {
   background: #f7f6f2;
@@ -248,7 +249,12 @@ a:hover {
   background-image: url('images/hero_bg.png');
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero {
+    background-attachment: fixed;
+  }
 }
 
 .hero::before {
@@ -361,31 +367,30 @@ a:hover {
 
 .resume-btn {
   display: inline-block;
-  padding: 0.8rem 2rem;
+  padding: 0.5rem 1.2rem;
   margin-bottom: var(--space-xl);
   font-family: var(--font-serif);
-  font-size: 0.8rem;
-  letter-spacing: 0.25em;
-  color: var(--ink-gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-gold-dim);
   background: transparent;
-  border: 1px solid var(--ink-gold-dim);
-  border-radius: 4px;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 2px;
   text-decoration: none;
   transition: all var(--duration) var(--ease-out);
   opacity: 0;
   animation: fade-up 1.2s 1.3s var(--ease-out) forwards;
 }
 [data-theme="light"] .resume-btn {
-  color: var(--text-primary);
-  border-color: rgba(26, 24, 21, 0.3);
+  color: var(--text-secondary);
+  border-color: rgba(26, 24, 21, 0.2);
 }
 
 .resume-btn:hover {
   background: rgba(201, 168, 76, 0.05);
   transform: translateY(-2px);
-  border-color: var(--ink-gold-glow);
-  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.15);
-  color: #fff;
+  border-color: var(--ink-gold);
+  color: var(--ink-gold-glow);
 }
 [data-theme="light"] .resume-btn:hover {
   background: rgba(26, 24, 21, 0.05);
@@ -1002,10 +1007,6 @@ a:hover {
     position: absolute;
     right: 10px;
     top: 10px;
-  }
-  
-  .hero {
-    background-attachment: scroll; /* Fix for iOS Safari background issue */
   }
 
   .episodes__grid {

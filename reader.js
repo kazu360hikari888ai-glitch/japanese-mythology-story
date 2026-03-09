@@ -120,10 +120,8 @@
     const intro = document.getElementById('intro');
     if (intro) {
       if (!sessionStorage.getItem('mythology_intro_played')) {
-        document.body.style.overflow = 'hidden';
         setTimeout(() => {
           intro.classList.add('intro--hidden');
-          document.body.style.overflow = '';
           sessionStorage.setItem('mythology_intro_played', 'true');
         }, 4000);
       } else {
